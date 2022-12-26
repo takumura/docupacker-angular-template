@@ -235,3 +235,6 @@ _Pvt_Extensions
 
 # exclude documents folder storing test markdown files
 /docs
+
+# exclude assets/index.json
+**/assets/index.json
