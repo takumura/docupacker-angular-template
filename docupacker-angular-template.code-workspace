@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "Docs"
+	},
+	{
+		"path": "AngularStandalone"
+	},
+	{
+		"path": "../docupacker-angular-lib"
+	}
+]
+}
