@@ -24,7 +24,7 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "styles": ["@angular/material/prebuilt-themes/indigo-pink.css", "src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -82,7 +82,7 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "styles": ["@angular/material/prebuilt-themes/indigo-pink.css", "src/styles.scss"],
             "scripts": []
           }
         }
@@ -90,21 +90,21 @@
     },
     "docupacker-angular-lib": {
       "projectType": "library",
-      "root": "../docupacker-angular-lib/projects/docupacker-angular-lib",
-      "sourceRoot": "../docupacker-angular-lib/projects/docupacker-angular-lib/src",
+      "root": "../../docupacker-angular-lib/projects/docupacker-angular-lib",
+      "sourceRoot": "../../docupacker-angular-lib/projects/docupacker-angular-lib/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "../docupacker-angular-lib/projects/docupacker-angular-lib/ng-package.json"
+            "project": "../../docupacker-angular-lib/projects/docupacker-angular-lib/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "../docupacker-angular-lib/projects/docupacker-angular-lib/tsconfig.lib.prod.json"
+              "tsConfig": "../../docupacker-angular-lib/projects/docupacker-angular-lib/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "../docupacker-angular-lib/projects/docupacker-angular-lib/tsconfig.lib.json"
+              "tsConfig": "../../docupacker-angular-lib/projects/docupacker-angular-lib/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -112,7 +112,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "../docupacker-angular-lib/projects/docupacker-angular-lib/tsconfig.spec.json",
+            "tsConfig": "../../docupacker-angular-lib/projects/docupacker-angular-lib/tsconfig.spec.json",
             "polyfills": ["zone.js", "zone.js/testing"]
           }
         },
@@ -120,8 +120,8 @@
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "lintFilePatterns": [
-              "../docupacker-angular-lib/projects/docupacker-angular-lib/**/*.ts",
-              "../docupacker-angular-lib/projects/docupacker-angular-lib/**/*.html"
+              "../../docupacker-angular-lib/projects/docupacker-angular-lib/**/*.ts",
+              "../../docupacker-angular-lib/projects/docupacker-angular-lib/**/*.html"
             ]
           }
         }
