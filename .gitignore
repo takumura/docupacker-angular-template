@@ -238,6 +238,3 @@ _Pvt_Extensions
 
 # segment json file
 Docs/json
-
-# exclude documents folder storing test markdown files
-/docs

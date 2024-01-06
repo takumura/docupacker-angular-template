@@ -1,0 +1,55 @@
+@use "@angular/material" as mat;
+@import "variables";
+
+.primary-lighter {
+  background-color: $primary-lighter;
+  color: white !important;
+}
+.primary {
+  background-color: $primary;
+  color: white !important;
+}
+.primary-darker {
+  background-color: $primary-darker;
+  color: white !important;
+}
+
+.accent-lighter {
+  background-color: $accent-lighter;
+}
+.accent {
+  background-color: $accent;
+  color: white !important;
+}
+.accent-darker {
+  background-color: $accent-darker;
+  color: white !important;
+}
+
+.warn {
+  background-color: $warn;
+  color: white !important;
+}
+
+.gary {
+  background-color: $gray;
+  color: white !important;
+}
+
+.dark-gray {
+  background-color: $gray-darker;
+  color: white !important;
+}
+
+.light-gray {
+  background-color: $gray-lighter;
+}
+
+.gray-300 {
+  background-color: $gray-300;
+}
+
+.gray-600 {
+  background-color: $gray-600;
+  color: white !important;
+}
