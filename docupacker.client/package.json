@@ -10,7 +10,8 @@
     "prestart": "node aspnetcore-https",
     "start:windows": "ng serve --ssl --ssl-cert \"%APPDATA%\\ASP.NET\\https\\%npm_package_name%.pem\" --ssl-key \"%APPDATA%\\ASP.NET\\https\\%npm_package_name%.key\" --host=127.0.0.1",
     "start:default": "ng serve --ssl --ssl-cert \"$HOME/.aspnet/https/${npm_package_name}.pem\" --ssl-key \"$HOME/.aspnet/https/${npm_package_name}.key\" --host=127.0.0.1",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "deploy": "ng deploy"
   },
   "private": true,
   "dependencies": {
@@ -29,6 +30,7 @@
     "@ngrx/router-store": "^17.0.1",
     "@ngrx/store": "^17.0.1",
     "@ngrx/store-devtools": "^17.0.1",
+    "angular-cli-ghpages": "^1.0.7",
     "jest-editor-support": "*",
     "postscribe": "^2.0.8",
     "rehype-attr": "^3.0.3",
