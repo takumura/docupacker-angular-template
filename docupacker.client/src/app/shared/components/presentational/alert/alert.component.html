@@ -1,0 +1,14 @@
+<div class="alert alert-{{ type }}" role="alert">
+  @switch (type) {
+    @case ("success") {
+      <span class="alert-icon"><mat-icon svgIcon="alert-circle-check" /></span>
+    } @case ("warn") {
+        <span class="alert-icon"><mat-icon svgIcon="alert" /></span>
+    } @case ("danger") {
+        <span class="alert-icon"><mat-icon svgIcon="close-octagon" /></span>
+    } @default {
+        <span class="alert-icon"><mat-icon svgIcon="information-box" /></span>
+    }
+  }
+  {{ message }}
+</div>
