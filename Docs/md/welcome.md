@@ -30,11 +30,11 @@ DocuPacker.Serverが生成したmarkdownデータ(json形式)を利用して、m
 
 TODO
 
-## markdown シンタックスについて
+## markdownシンタックスについて
 
 TODO
 
-## DocuPacker 独自の markdown シンタックス
+## DocuPacker独自のmarkdownシンタックス
 
 TODO
 
