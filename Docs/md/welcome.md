@@ -28,14 +28,14 @@ DocuPacker.Serverが生成したmarkdownデータ(json形式)を利用して、m
 
 ## Get Started
 
-TODO
+<docup-alert type="warn" message="TODO" /></docup-alert>
 
 ## markdownシンタックスについて
 
-TODO
+<docup-alert type="warn" message="TODO" /></docup-alert>
 
 ## DocuPacker独自のmarkdownシンタックス
 
-TODO
+<docup-alert type="warn" message="TODO" /></docup-alert>
 
 <small>&copy; Copyright 2022-2024 takumura</small>

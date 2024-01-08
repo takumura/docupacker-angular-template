@@ -1,6 +1,6 @@
 import { importProvidersFrom, isDevMode } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { bootstrapApplication } from '@angular/platform-browser';
+import { bootstrapApplication, createApplication } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes, TitleStrategy } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
@@ -14,6 +14,8 @@ import { reducers } from './app/store';
 import { DocumentIndexStoreModule } from './app/store/document-index/document-index-store.module';
 import { DocumentSearchStoreModule } from './app/store/document-search/document-search-store.module';
 import { LoadingStoreModule } from './app/store/loading/loading-store.module';
+import { AlertComponent } from './app/shared/components/presentational/alert/alert.component';
+import { createCustomElement } from '@angular/elements';
 
 const routes: Routes = [
   {
@@ -59,3 +61,17 @@ bootstrapApplication(AppComponent, {
     ),
   ],
 }).catch((err) => console.error(err));
+
+(async () => {
+  const app = await createApplication({
+    providers: [
+      /* your global providers here */
+    ],
+  });
+
+  const toogleElement = createCustomElement(AlertComponent, {
+    injector: app.injector,
+  });
+
+  customElements.define('docup-alert', toogleElement);
+})();
