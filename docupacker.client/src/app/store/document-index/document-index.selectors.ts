@@ -64,8 +64,8 @@ export const selectDocument = createSelector(selectDocuments, selectUrl, (docume
 });
 
 export const selectDocumentByDocRef = (docRef: string) =>
-  createSelector(selectDocuments, selectUrl, (documents, url) => {
-    let document = documents?.find((x) => x.docRef === docRef) ?? defaultDocRefModel;
+  createSelector(selectDocuments, (documents) => {
+    const document = documents?.find((x) => x.docRef === docRef) ?? defaultDocRefModel;
     return convertJsonToHtml(document);
   });
 

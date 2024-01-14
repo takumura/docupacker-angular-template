@@ -133,6 +133,7 @@ export class ScrollSpyService {
   private _topOfPageElement: HTMLElement | undefined;
   private onDestroy = new Subject<void>();
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   constructor(@Inject(DOCUMENT) private doc: any) {}
 
   /*
@@ -170,15 +171,15 @@ export class ScrollSpyService {
     };
   }
 
-  private getContentHeight() {
+  private getContentHeight(): number {
     return this.doc.body.scrollHeight || Number.MAX_SAFE_INTEGER;
   }
 
-  private getScrollTop() {
+  private getScrollTop(): number  {
     return (window && window.pageYOffset) || 0;
   }
 
-  private getTopOffset() {
+  private getTopOffset(): number  {
     // Offset from the top of the document to bottom of any static elements
     // at the top (e.g. toolbar) + some margin
     if (!this._topOffset) {
@@ -188,7 +189,7 @@ export class ScrollSpyService {
     return (this._topOffset as number) + 50;
   }
 
-  private getViewportHeight() {
+  private getViewportHeight(): number  {
     return this.doc.body.clientHeight || 0;
   }
 

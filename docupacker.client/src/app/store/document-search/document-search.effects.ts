@@ -7,13 +7,13 @@ import { hideLoading } from '../loading/loading.actions';
 
 @Injectable()
 export class DocumentSearchEffects {
-  documentSearch$ = createEffect(() =>
-    this.actions$.pipe(
+  documentSearch$ = createEffect(() => {
+    return this.actions$.pipe(
       ofType(documentSearchActions.searchDocuments, documentSearchActions.searchDocumentsByAdvancedOptions),
       delay(1000),
-      map((_) => hideLoading())
-    )
-  );
+      map(() => hideLoading())
+    );
+  });
 
   constructor(private actions$: Actions) {}
 }

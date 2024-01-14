@@ -21,7 +21,7 @@ const initialState: State = {
 
 const documents = documentJson.map((x) => {
   const jsonObj = JSON.parse(x) as DocumentRef;
-  let result: DocumentRef = {
+  const result: DocumentRef = {
     docRef: '',
     content: initialMarkdownDocumentModel,
   };

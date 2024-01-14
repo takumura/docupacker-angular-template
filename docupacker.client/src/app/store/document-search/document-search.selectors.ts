@@ -65,7 +65,7 @@ export const selectSearchWord = createSelector(selectDocumentSearchState, (state
 export const selectViewType = createSelector(selectDocumentSearchState, (state) => state?.documentSearch.viewType);
 
 function getOrderedDocumentIndex(state: fromDocumentSearch.State, documentIndex: DocumentRef[]) {
-  let index = [...documentIndex];
+  const index = [...documentIndex];
 
   switch (state.documentSearch.sortBy) {
     case searchResultSortBy.dateLatest:

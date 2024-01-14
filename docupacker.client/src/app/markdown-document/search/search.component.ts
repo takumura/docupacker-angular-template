@@ -103,6 +103,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   constructor(private store: Store) {}
 
   ngOnInit(): void {
+    //TODO: what happens if subscribing this select and hide loading?
     this.documents$ = this.store.select(selectFilteredDocuments);
     this.allCategories$ = this.store.select(selectCategories);
     this.allTags$ = this.store.select(selectTags);
@@ -114,13 +115,13 @@ export class SearchComponent implements OnInit, OnDestroy {
       switchMap((tag: string | null) => (tag ? this.getAutocompleteTags(tag) : this.getAvailableTags()))
     );
 
-    this.searchForm.controls.searchOptionForm.valueChanges.pipe(takeUntil(this.onDestroy)).subscribe((_) => {
+    this.searchForm.controls.searchOptionForm.valueChanges.pipe(takeUntil(this.onDestroy)).subscribe(() => {
       this.searchDocumentInternal();
     });
 
     this.searchForm?.controls?.searchInputForm.valueChanges
       .pipe(debounceTime(1000), distinctUntilChanged(), takeUntil(this.onDestroy))
-      .subscribe((_) => {
+      .subscribe(() => {
         this.searchDocumentInternal();
       });
 

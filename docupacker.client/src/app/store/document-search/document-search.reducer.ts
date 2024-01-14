@@ -27,34 +27,43 @@ const initialState: State = {
 
 const markdownDocumentReducer = createReducer(
   initialState,
-  on(searchDocuments, (state: State, payload) => ({
-    ...state,
-    documentSearch: {
-      searchWord: payload.search,
-      category: state.documentSearch.category,
-      tags: state.documentSearch.tags,
-      sortBy: payload.sortBy ?? state.documentSearch.sortBy,
-      viewType: state.documentSearch.viewType,
-    },
-  })),
-  on(searchDocumentsByAdvancedOptions, (state: State, payload) => ({
-    ...state,
-    documentSearch: {
-      searchWord: state.documentSearch.searchWord,
-      category: payload.category ?? state.documentSearch.category,
-      tags: payload.tags ?? state.documentSearch.tags,
-      sortBy: state.documentSearch.sortBy,
-      viewType: state.documentSearch.viewType,
-    },
-  })),
-  on(updateViewType, (state: State, payload) => ({
-    ...state,
-    documentSearch: {
-      searchWord: state.documentSearch.searchWord,
-      category: state.documentSearch.category,
-      tags: state.documentSearch.tags,
-      sortBy: state.documentSearch.sortBy,
-      viewType: payload.viewType ?? state.documentSearch.viewType,
-    },
-  }))
+  on(
+    searchDocuments,
+    (state: State, payload): State => ({
+      ...state,
+      documentSearch: {
+        searchWord: payload.search,
+        category: state.documentSearch.category,
+        tags: state.documentSearch.tags,
+        sortBy: payload.sortBy ?? state.documentSearch.sortBy,
+        viewType: state.documentSearch.viewType,
+      },
+    })
+  ),
+  on(
+    searchDocumentsByAdvancedOptions,
+    (state: State, payload): State => ({
+      ...state,
+      documentSearch: {
+        searchWord: state.documentSearch.searchWord,
+        category: payload.category ?? state.documentSearch.category,
+        tags: payload.tags ?? state.documentSearch.tags,
+        sortBy: state.documentSearch.sortBy,
+        viewType: state.documentSearch.viewType,
+      },
+    })
+  ),
+  on(
+    updateViewType,
+    (state: State, payload): State => ({
+      ...state,
+      documentSearch: {
+        searchWord: state.documentSearch.searchWord,
+        category: state.documentSearch.category,
+        tags: state.documentSearch.tags,
+        sortBy: state.documentSearch.sortBy,
+        viewType: payload.viewType ?? state.documentSearch.viewType,
+      },
+    })
+  )
 );

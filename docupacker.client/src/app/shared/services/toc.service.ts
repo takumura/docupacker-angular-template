@@ -22,7 +22,7 @@ export class TocService {
   activeItemIndex = new ReplaySubject<number | null>(1);
   private scrollSpyInfo: ScrollSpyInfo | null = null;
 
-  constructor(@Inject(DOCUMENT) private document: any, private scrollSpyService: ScrollSpyService) {}
+  constructor(@Inject(DOCUMENT) private document: unknown, private scrollSpyService: ScrollSpyService) {}
 
   genToc(docElement?: Element, docId = '') {
     this.resetScrollSpyInfo();
