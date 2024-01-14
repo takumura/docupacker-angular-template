@@ -19,8 +19,6 @@ import { delay, filter, Observable, Subject, takeUntil } from 'rxjs';
 import { BreakpointObserverService } from 'src/app/shared/services/breakpoint-observer.service';
 import { hideLoading, showLoading } from 'src/app/store/loading/loading.actions';
 import { LoadingBarComponent } from '../shared/components/loading-bar/loading-bar.component';
-
-//TODO to be deleted
 import { environment } from 'src/environments/environment';
 
 @Component({
