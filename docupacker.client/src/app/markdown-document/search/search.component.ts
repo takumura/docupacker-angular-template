@@ -234,7 +234,11 @@ export class SearchComponent implements OnInit, OnDestroy {
     const searchWord = this.searchForm.controls.searchInputForm.value ?? '';
     const sortByValue = this.searchForm.controls.searchOptionForm.value ?? 0;
 
-    this.store.dispatch(showLoading());
+    this.showLoading();
     this.store.dispatch(searchDocuments({ search: searchWord, sortBy: sortByValue }));
+  }
+
+  private showLoading() {
+    this.store.dispatch(showLoading());
   }
 }
